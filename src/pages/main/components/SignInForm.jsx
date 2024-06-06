@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import InputBox from "../../../components/InputBox";
+import TDButton from "../../../components/TDButton";
 const SignInForm = () => {
     return (
         <S.Container>
@@ -15,7 +16,12 @@ const SignInForm = () => {
                     size={3}
                 />
             </S.Form>
-            <S.Button></S.Button>
+            <TDButton
+                variant="primary-text"
+                size="full"
+                shape="round"
+                txt="로그인"
+            ></TDButton>
         </S.Container>
     );
 };

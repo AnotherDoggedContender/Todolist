@@ -2,10 +2,14 @@
 // 2. 출력: 객체 키에 해당되는 css 변경
 import styled, { css } from "styled-components";
 
-const SignInBtn = ({ variant, size, ...props }) => {
-    <button>스타일 변경</button>;
+const TDButton = ({ variant, size, shape, txt, ...props }) => {
+    return (
+        <S.Button variant={variant} size={size} shape={shape} txt={txt}>
+            {txt}
+        </S.Button>
+    );
 };
-
+export default TDButton;
 const variantCss = {
     primary: css`
         background-color: green;
@@ -33,8 +37,25 @@ const sizeCss = {
     `,
 };
 const shapeCss = {
-    round: css``,
+    round: css`
+        border-radius: 50%;
+    `,
+    normal: css`
+        border-radius: 8px;
+    `,
 };
-const ButtonCss = styled.button`
-    size: ;
+const Button = styled.button`
+    ${(props) => {
+        return variantCss[props.variant];
+    }}
+    ${(props) => {
+        return sizeCss[props.size];
+    }}
+    ${(props) => {
+        return shapeCss[props.shape];
+    }}
 `;
+
+const S = {
+    Button,
+};
