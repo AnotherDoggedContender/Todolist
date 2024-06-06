@@ -65,7 +65,7 @@ const Main = () => {
                 {formState === "SIGN-IN" ? (
                     <SignInForm />
                 ) : (
-                    <SignUpForm onSubmit={changeSignTab} />
+                    <SignUpForm setFormState={setFormState} />
                 )}
                 {/*isSelected는 공용 value??*/}
                 {/*안에 들어갈 게 아무 것도 없으면 "/>"로 바로 닫음*/}

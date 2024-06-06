@@ -22,37 +22,39 @@ const InputBoxArray = [
         size: 3,
     },
 ];
-const SignUpForm = ({ onSubmit }) => {
-    console.log({ onSubmit });
+
+const SignUpForm = ({ setFormState }) => {
+    //props는 변수의 참조값을 갖고 오나?
+    function onSubmitSignUp(e) {
+        e.preventDefault();
+        const email = e.target.email.value;
+        alert(`${email}님 환영합니다.`);
+        setFormState("SIGN-IN");
+    }
     return (
-        <S.Container>
-            <S.Form>
-                {InputBoxArray.map((props) => {
-                    return (
-                        <InputBox
-                            key={props.name}
-                            label={props.label}
-                            placeholder={
-                                props.option
-                                    ? props.option.placeholder
-                                    : props.name
-                            }
-                            size={props.size}
-                        />
-                    );
-                })}
-            </S.Form>
+        <S.Form onSubmit={onSubmitSignUp}>
+            {/* onSubmit 때문에 event 자리에 form이 들어간다. */}
+            {InputBoxArray.map((props) => {
+                return (
+                    <InputBox
+                        name={props.name}
+                        key={props.name}
+                        label={props.label}
+                        placeholder={
+                            props.option ? props.option.placeholder : props.name
+                        }
+                        size={props.size}
+                    />
+                );
+            })}
             <TDButton
                 variant="primary-text"
                 size="full"
                 shape="round"
                 txt="회원가입"
-                onClick={() => {
-                    console.log("회원가입 눌림");
-                    onSubmit("SIGN-IN");
-                }}
+                type="submit"
             ></TDButton>
-        </S.Container>
+        </S.Form>
     );
 };
 

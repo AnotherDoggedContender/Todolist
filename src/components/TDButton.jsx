@@ -10,6 +10,7 @@ const TDButton = ({ variant, size, shape, txt, ...props }) => {
             shape={shape}
             txt={txt}
             onClick={props.onClick}
+            type={props.type}
         >
             {txt}
         </S.Button>
