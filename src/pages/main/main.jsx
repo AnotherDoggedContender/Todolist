@@ -6,9 +6,11 @@ import SignUpForm from "./components/SignUpForm";
 const Main = () => {
     //컴포넌트: 레이아웃, 회원가입 폼, 로그인 폼, 인풋, 버튼
     const [formState, setFormState] = useState("SIGN-IN");
-    const onClickSignTab = (tabName) => {
+    const changeSignTab = (tabName) => {
         setFormState(tabName);
+        console.log("현재 state는 ", formState);
     };
+
     const TabArray = [
         {
             name: "SIGN-IN",
@@ -29,7 +31,7 @@ const Main = () => {
                             <S.Tab
                                 key={index}
                                 $isSelected={tab.isSelected}
-                                onClick={() => onClickSignTab(tab.name)}
+                                onClick={() => changeSignTab(tab.name)}
                             >
                                 {tab.name}
                             </S.Tab>
@@ -42,7 +44,7 @@ const Main = () => {
                         id="SIGN-IN"
                         isSelected={formState === "SIGN-IN"}
                         onClick={(e) => {
-                            onClickSignTab(e.target.id);
+                            changeSignTab(e.target.id);
                             console.log(formState);
                         }}
                     >
@@ -52,7 +54,7 @@ const Main = () => {
                         id="SIGN-UP"
                         isSelected={formState === "SIGN-UP"}
                         onClick={(e) => {
-                            onClickSignTab(e.target.id);
+                            changeSignTab(e.target.id);
                             console.log(formState);
                         }}
                     >
@@ -60,7 +62,11 @@ const Main = () => {
                     </S.Tab>
                 </S.Header>*/}
 
-                {formState === "SIGN-IN" ? <SignInForm /> : <SignUpForm />}
+                {formState === "SIGN-IN" ? (
+                    <SignInForm />
+                ) : (
+                    <SignUpForm onSubmit={changeSignTab} />
+                )}
                 {/*isSelected는 공용 value??*/}
                 {/*안에 들어갈 게 아무 것도 없으면 "/>"로 바로 닫음*/}
             </S.Container>

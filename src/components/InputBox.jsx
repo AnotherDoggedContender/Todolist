@@ -1,7 +1,5 @@
 import styled, { css } from "styled-components";
 const InputBox = ({ label, size, ...props }) => {
-    console.log(`props 출력`);
-    console.log(props);
     return (
         <S.InputContainer>
             <S.Label>{label}</S.Label>
@@ -13,7 +11,7 @@ const InputBox = ({ label, size, ...props }) => {
 export default InputBox;
 const sizeCSS = {
     1: css`
-        width: 100px;
+        width: 100%;
         height: 30px;
     `,
     2: css`

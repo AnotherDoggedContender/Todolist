@@ -4,7 +4,13 @@ import styled, { css } from "styled-components";
 
 const TDButton = ({ variant, size, shape, txt, ...props }) => {
     return (
-        <S.Button variant={variant} size={size} shape={shape} txt={txt}>
+        <S.Button
+            variant={variant}
+            size={size}
+            shape={shape}
+            txt={txt}
+            onClick={props.onClick}
+        >
             {txt}
         </S.Button>
     );

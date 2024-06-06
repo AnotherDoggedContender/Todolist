@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import InputBox from "../../../components/InputBox";
 import TDButton from "../../../components/TDButton";
-import { Form } from "./style";
+import { Form } from "./Style";
 const SignInForm = () => {
     return (
         <S.Container>
