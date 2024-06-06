@@ -29,14 +29,6 @@ const SignUpForm = () => {
 export default SignUpForm;
 const Container = styled.div``;
 
-const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 32px;
-    /* width: 100%; 왜 이거 하면 요소가 튀어나오지?*/
-`;
-
 const S = {
     Container,
     Form,

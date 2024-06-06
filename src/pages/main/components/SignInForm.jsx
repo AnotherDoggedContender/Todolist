@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import InputBox from "../../../components/InputBox";
 import TDButton from "../../../components/TDButton";
+import { Form } from "./style";
 const SignInForm = () => {
     return (
         <S.Container>
@@ -28,14 +29,6 @@ const SignInForm = () => {
 
 export default SignInForm;
 const Container = styled.div``;
-
-const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 32px;
-    /* width: 100%; 왜 이거 하면 요소가 튀어나오지?*/
-`;
 
 const S = {
     Container,

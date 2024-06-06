@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const InputBox = (props) => {
+const InputBox = (label, size, ...props) => {
     console.log(`props 출력`);
     console.log(props);
     return (
